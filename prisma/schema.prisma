@@ -21,8 +21,8 @@ model Parlour {
   id         Int          @id @default(autoincrement())
   shopname   String       @db.VarChar(255)
   address    String
-  zip        String       @db.VarChar(100)
-  city       String       @db.VarChar(100)
+  zip        String       @db.VarChar(6)
+  city       String       @db.VarChar(50)
   picture    String       @db.VarChar(255)
   favourites Favourites[]
   menu       Menu[]
@@ -39,7 +39,7 @@ model Favourites {
 
 model Flavours {
   id          Int    @id @default(autoincrement())
-  flavourname String @db.VarChar(255)
+  flavourname String @db.VarChar(50)
   menu        Menu[]
 }
 
