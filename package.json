@@ -6,15 +6,31 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "migrateDB": "npx prisma migrate dev",
+    "resetDB": "npx prisma migrate reset",
+    "generate-db-client": "npx prisma generate",
+    "showDB": "npx prisma studio",
+    "seed": "npx prisma db seed"
   },
   "dependencies": {
+    "@prisma/client": "^4.1.0",
     "next": "12.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
     "eslint": "8.20.0",
-    "eslint-config-next": "12.2.2"
-  }
+    "eslint-config-next": "12.2.2",
+    "prisma": "^4.1.0"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
+  "description": "Pour les amateurs de bonnes glaces",
+  "main": "next.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
