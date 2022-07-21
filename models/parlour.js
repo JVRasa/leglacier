@@ -1,6 +1,6 @@
 const db = require("../db");
 
-module.exports.findAllParlours = () =>
+module.exports.findAllParlours = ({ search }) =>
   db.parlour.findMany({
     include: {
       menu: {
@@ -13,6 +13,7 @@ module.exports.findAllParlours = () =>
         },
       },
     },
+    where: { shopname: { contains: search } },
   });
 
 module.exports.getOneParlour = (id) => {

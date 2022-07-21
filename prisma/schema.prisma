@@ -12,7 +12,7 @@ model User {
   username   String       @db.VarChar(255)
   email      String       @unique
   password   String       @db.VarChar(100)
-  picture    String       @db.VarChar(255)
+  picture    String?      @db.VarChar(255)
   favourites Favourites[]
   reviews    Reviews[]
 }

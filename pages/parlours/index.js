@@ -1,22 +1,24 @@
 import axios from "axios";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import Header from "../../components/Header";
 import ParlourCard from "../../components/ParlourCard";
 
 function Parlour() {
-  const [parlourList, setParlourList] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
 
   const router = useRouter();
 
-  useEffect(() => {
-    axios
-      .get("/api/parlours")
-      .then((res) => setParlourList(res.data))
-      .catch(console.error);
-  }, []);
-
-  console.log(parlourList);
+  const { data: parlourList = [] } = useQuery(
+    ["parlours", { search: searchValue }],
+    () => {
+      return axios
+        .get(`/api/parlours?search=${searchValue}`)
+        .then((response) => response.data)
+        .catch(console.error);
+    }
+  );
 
   const color = "light-blue";
 
@@ -26,7 +28,13 @@ function Parlour() {
       <Header color={color} />
       <div className="md:w-[70%] md:m-auto">
         <div className="bg-purple p-4 rounded-xl text-[#F5F5F5] text-xl  mt-28 mb-12">
-          Rechercher un parfum
+          <input
+            type="text"
+            placeholder="Rechercher un parfum"
+            value={searchValue}
+            onChange={(event) => setSearchValue(event.target.value)}
+            className="bg-purple text-grey w-full"
+          />
         </div>
         <section className="flex flex-col gap-4">
           {parlourList.map((parlour) => (
