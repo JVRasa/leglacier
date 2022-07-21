@@ -29,6 +29,7 @@ module.exports.getOneParlour = (id) => {
       },
       reviews: {
         select: {
+          id: true,
           message: true,
           user: {
             select: {
