@@ -40,7 +40,7 @@ function AddReview() {
   return (
     <div className="min-h-screen bg-[#FF99C8] p-4">
       <Header color={color} />
-      <Link href={`/parlour/${id}`}>
+      <Link href={`/parlours/${id}`}>
         <p className="mt-[70px]">← retour au glacier</p>
       </Link>
       <section className="mt-10">
@@ -49,8 +49,14 @@ function AddReview() {
         </h1>
         <section className="bg-[#ffffff] p-4 mt-10 rounded-xl">
           <section className="flex gap-4 items-center mb-4">
-            <div className="w-12 h-12 bg-grey rounded-full">image</div>
-            <div>user.username</div>
+            <div className="w-12 h-12 bg-grey rounded-full">
+              <img
+                src="/image/iconToto.jpg"
+                alt="toto"
+                className="w-full h-full object-fit rounded-full"
+              />
+            </div>
+            <div>Toto</div>
           </section>
           <form
             onSubmit={handleAddReview}

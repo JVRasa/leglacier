@@ -38,7 +38,7 @@ function Header({ color }) {
             <Link href="/parlours">
               <p
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-2xl cursor-pointer font-black hover:text-pink hover:text-4xl tracking-wide md:text-5xl md:hover:text-6xl"
+                className="text-2xl cursor-pointer font-black hover:text-pink tracking-wide md:text-5xl md:hover:text-6xl"
               >
                 LISTE DES GLACIERS
               </p>
@@ -48,7 +48,7 @@ function Header({ color }) {
             <Link href="/">
               <p
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-2xl cursor-pointer font-black hover:text-pink hover:text-4xl tracking-wide md:text-5xl md:hover:text-6xl"
+                className="text-2xl cursor-pointer font-black hover:text-pink tracking-wide md:text-5xl md:hover:text-6xl"
               >
                 MES FAVORIS
               </p>
@@ -58,7 +58,7 @@ function Header({ color }) {
             <Link href="/">
               <p
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-2xl cursor-pointer font-black hover:text-pink hover:text-4xl tracking-wide md:text-5xl md:hover:text-6xl"
+                className="text-2xl cursor-pointer font-black hover:text-pink tracking-wide md:text-5xl md:hover:text-6xl"
               >
                 MON PROFIL
               </p>
@@ -66,7 +66,7 @@ function Header({ color }) {
           </li>
           <li>
             <Link href="/">
-              <p className="text-2xl cursor-pointer font-black hover:text-pink hover:text-4xl tracking-wide md:text-5xl md:hover:text-6xl">
+              <p className="text-2xl cursor-pointer font-black hover:text-pink tracking-wide md:text-5xl md:hover:text-6xl">
                 SE DECONNECTER
               </p>
             </Link>

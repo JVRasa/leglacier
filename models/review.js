@@ -12,6 +12,7 @@ module.exports.getOneReview = (id) => {
       user: {
         select: {
           username: true,
+          picture: true,
         },
       },
       parlour: {

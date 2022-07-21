@@ -49,7 +49,13 @@ function EditReview() {
           </h1>
           <section className="bg-[#ffffff] p-4 mt-10 rounded-xl">
             <section className="flex gap-4 items-center mb-4">
-              <div className="w-12 h-12 bg-grey rounded-full">image</div>
+              <div className="w-12 h-12 bg-grey rounded-full">
+                <img
+                  src={review.user.picture}
+                  alt={review.user.username}
+                  className="w-full h-full object-fit rounded-full"
+                />
+              </div>
               <div>{review.user.username}</div>
             </section>
             <form

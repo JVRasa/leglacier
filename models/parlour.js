@@ -13,7 +13,9 @@ module.exports.findAllParlours = ({ search }) =>
         },
       },
     },
-    where: { shopname: { contains: search } },
+    where: {
+      menu: { some: { flavours: { flavourname: { contains: search } } } },
+    },
   });
 
 module.exports.getOneParlour = (id) => {
