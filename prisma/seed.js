@@ -6,7 +6,7 @@ async function seed() {
       username: "Toto",
       email: "toto@alaplage.fr",
       password: "totototo",
-      picture: "/image/raymond.jpeg",
+      picture: "/image/iconToto.jpg",
     },
   });
   const baba = await db.user.create({
@@ -14,7 +14,7 @@ async function seed() {
       username: "Baba",
       email: "baba@orhum.fr",
       password: "babababa",
-      picture: "/image/raymond.jpeg",
+      picture: "/image/iconBaba.jpg",
     },
   });
 
@@ -24,7 +24,7 @@ async function seed() {
       address: "2 rue Delandine",
       zip: "69007",
       city: "Lyon",
-      picture: "/image/fusee01.jpg",
+      picture: "/image/logoHome.jpg",
     },
   });
 
@@ -34,7 +34,7 @@ async function seed() {
       address: "16 rue Trouille",
       zip: "69002",
       city: "Lyon",
-      picture: "/image/fusee01.jpg",
+      picture: "/image/iconHome.jpg",
     },
   });
   const parlour3 = await db.parlour.create({
@@ -43,7 +43,7 @@ async function seed() {
       address: "68 rue Zola",
       zip: "69001",
       city: "Lyon",
-      picture: "/image/fusee01.jpg",
+      picture: "/image/iconBaba.jpg",
     },
   });
 
