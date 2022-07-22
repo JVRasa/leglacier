@@ -52,7 +52,7 @@ function Header({ color }) {
             <Link href="/profile">
               <p
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-2xl cursor-pointer font-black hover:text-pink tracking-wide md:text-5xl md:hover:text-6xl"
+                className="text-2xl cursor-pointer font-black hover:text-dark-blue tracking-wide md:text-5xl md:hover:text-6xl"
               >
                 MON PROFIL
               </p>
@@ -62,7 +62,7 @@ function Header({ color }) {
             {currentUserProfile ? (
               <Link href="/">
                 <p
-                  className="text-2xl cursor-pointer font-black hover:text-pink tracking-wide md:text-5xl md:hover:text-6xl"
+                  className="text-2xl cursor-pointer font-black hover:text-[#ec9f7a] tracking-wide md:text-5xl md:hover:text-6xl"
                   onClick={() => signOut()}
                 >
                   SE DECONNECTER
@@ -71,7 +71,7 @@ function Header({ color }) {
             ) : (
               <Link href="/">
                 <p
-                  className="text-2xl cursor-pointer font-black hover:text-pink tracking-wide md:text-5xl md:hover:text-6xl"
+                  className="text-2xl cursor-pointer font-black hover:text-[#ec9f7a] tracking-wide md:text-5xl md:hover:text-6xl"
                   onClick={() => signIn()}
                 >
                   SE CONNECTER

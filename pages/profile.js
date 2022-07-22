@@ -44,6 +44,7 @@ function Home() {
             <br />
             {currentUserProfile.username}
           </h1>
+          <p>{currentUserProfile.email}</p>
         </section>
       </div>
     </div>
