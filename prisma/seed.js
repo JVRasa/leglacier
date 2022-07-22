@@ -25,6 +25,7 @@ async function seed() {
       zip: "69007",
       city: "Lyon",
       picture: "/image/logoHome.jpg",
+      hours: "10h - 20h",
     },
   });
 
@@ -35,6 +36,7 @@ async function seed() {
       zip: "69002",
       city: "Lyon",
       picture: "/image/iconHome.jpg",
+      hours: "16h - 23h",
     },
   });
   const parlour3 = await db.parlour.create({
@@ -44,6 +46,7 @@ async function seed() {
       zip: "69001",
       city: "Lyon",
       picture: "/image/iconBaba.jpg",
+      hours: "10h - 20h",
     },
   });
 
@@ -104,7 +107,15 @@ async function seed() {
       },
       {
         parlourId: parlour1.id,
+        flavoursId: noisette.id,
+      },
+      {
+        parlourId: parlour1.id,
         flavoursId: chocolat.id,
+      },
+      {
+        parlourId: parlour1.id,
+        flavoursId: vanille.id,
       },
       {
         parlourId: parlour1.id,
@@ -128,7 +139,7 @@ async function seed() {
       },
       {
         parlourId: parlour3.id,
-        flavoursId: banane.id,
+        flavoursId: noisette.id,
       },
     ],
   });

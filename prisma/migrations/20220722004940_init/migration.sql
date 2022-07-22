@@ -4,7 +4,7 @@ CREATE TABLE `User` (
     `username` VARCHAR(255) NOT NULL,
     `email` VARCHAR(191) NOT NULL,
     `password` VARCHAR(100) NOT NULL,
-    `picture` VARCHAR(255) NOT NULL,
+    `picture` VARCHAR(255) NULL,
 
     UNIQUE INDEX `User_email_key`(`email`),
     PRIMARY KEY (`id`)
@@ -18,6 +18,7 @@ CREATE TABLE `Parlour` (
     `zip` VARCHAR(6) NOT NULL,
     `city` VARCHAR(50) NOT NULL,
     `picture` VARCHAR(255) NOT NULL,
+    `hours` VARCHAR(191) NOT NULL,
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

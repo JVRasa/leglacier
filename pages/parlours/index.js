@@ -26,7 +26,7 @@ function Parlour() {
     <div className="min-h-screen bg-light-blue p-4">
       {" "}
       <Header color={color} />
-      <div className="md:w-[70%] md:m-auto">
+      <div className=" md:w-3/6 md:m-auto">
         <div className="bg-purple p-4 rounded-xl text-[#F5F5F5] text-xl  mt-28 mb-12">
           <input
             type="text"

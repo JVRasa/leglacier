@@ -1,14 +1,18 @@
 import axios from "axios";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Link from "next/link";
 import Header from "../../../components/Header";
+
+import { CurrentUserContext } from "../../../context/currentUserContext";
 
 function EditReview() {
   const [review, setReview] = useState("");
 
   const router = useRouter();
   const { id } = router.query;
+
+  const { currentUserProfile } = useContext(CurrentUserContext);
 
   useEffect(() => {
     id &&
@@ -40,23 +44,23 @@ function EditReview() {
     <div className="min-h-screen bg-[#FF99C8] p-4">
       <Header color={color} />
       <Link href={`/parlours/${id}`}>
-        <p className="mt-[70px]">← retour au glacier</p>
+        <p className="mt-[70px] cursor-pointer">← retour au glacier</p>
       </Link>
       {review && (
-        <section className="mt-10">
+        <section className="mt-10 md:w-3/6 md:m-auto">
           <h1 className="text-3xl font-Mochiy text-light-blue text-center">
-            {review.shopname}
+            {review.parlour.shopname}
           </h1>
           <section className="bg-[#ffffff] p-4 mt-10 rounded-xl">
             <section className="flex gap-4 items-center mb-4">
               <div className="w-12 h-12 bg-grey rounded-full">
                 <img
-                  src={review.user.picture}
-                  alt={review.user.username}
+                  src={currentUserProfile.picture}
+                  alt={currentUserProfile.username}
                   className="w-full h-full object-fit rounded-full"
                 />
               </div>
-              <div>{review.user.username}</div>
+              <div>{currentUserProfile.username}</div>
             </section>
             <form
               onSubmit={handleAddReview}

@@ -15,8 +15,8 @@ module.exports = {
         pink: "#FF99C8",
         grey: "#424A45",
       },
-      fontFamily: { Mochiy: ["Mochiy Pop One", "sans-serif"] },
     },
+    fontFamily: { Mochiy: ["Mochiy Pop One", "sans-serif"] },
   },
   plugins: [],
 };

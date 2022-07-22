@@ -1,5 +1,5 @@
 import Header from "../components/Header";
-import { signIn } from "next-auth/react";
+import { signIn, signOut } from "next-auth/react";
 import { CurrentUserContext } from "../context/currentUserContext";
 import { useContext } from "react";
 
@@ -26,12 +26,23 @@ function Home() {
           <p className="text-xl">Pour les amateurs de bonnes glaces</p>
         </section>
         <section className="flex flex-col gap-2">
-          <button
-            type="button"
-            className="bg-dark-blue py-2 rounded-xl font-black md:w-[20%] md:m-auto hover:text-slate-100  hover:scale-125 ease-in-out duration-200"
-          >
-            SE CONNECTER
-          </button>
+          {currentUserProfile ? (
+            <button
+              type="button"
+              className="bg-dark-blue py-2 rounded-xl font-black md:w-[20%] md:m-auto hover:text-slate-100  md:hover:scale-125 ease-in-out duration-200"
+              onClick={() => signOut()}
+            >
+              SE DECONNECTER
+            </button>
+          ) : (
+            <button
+              type="button"
+              className="bg-dark-blue py-2 rounded-xl font-black md:w-[20%] md:m-auto hover:text-slate-100  md:hover:scale-125 ease-in-out duration-200"
+              onClick={() => signIn()}
+            >
+              SE CONNECTER
+            </button>
+          )}
 
           {!currentUserProfile && (
             <button

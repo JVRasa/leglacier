@@ -37,6 +37,7 @@ module.exports.getOneParlour = (id) => {
           user: {
             select: {
               username: true,
+              picture: true,
             },
           },
         },

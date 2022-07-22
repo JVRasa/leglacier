@@ -13,8 +13,10 @@ function ParlourCard({ parlour }) {
       <section className="w-[75%]">
         <h1 className="font-bold">{parlour.shopname}</h1>
         <p>{parlour.address}</p>
-        <p>{parlour.zip}</p>
-        <p>{parlour.city}</p>
+        <p>
+          {parlour.zip} {parlour.city}
+        </p>
+        <p>{parlour.hours}</p>
       </section>
     </div>
   );

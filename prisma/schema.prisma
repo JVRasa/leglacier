@@ -24,6 +24,7 @@ model Parlour {
   zip        String       @db.VarChar(6)
   city       String       @db.VarChar(50)
   picture    String       @db.VarChar(255)
+  hours      String
   favourites Favourites[]
   menu       Menu[]
   reviews    Reviews[]

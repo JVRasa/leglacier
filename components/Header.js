@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { MenuAlt2Icon, XIcon } from "@heroicons/react/solid";
+import { signIn, signOut } from "next-auth/react";
 import Link from "next/link";
-
+import { CurrentUserContext } from "../context/currentUserContext";
 function Header({ color }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const { currentUserProfile } = useContext(CurrentUserContext);
 
   return (
     <div
@@ -44,18 +47,9 @@ function Header({ color }) {
               </p>
             </Link>
           </li>
+
           <li>
-            <Link href="/">
-              <p
-                onClick={() => setIsOpen(!isOpen)}
-                className="text-2xl cursor-pointer font-black hover:text-pink tracking-wide md:text-5xl md:hover:text-6xl"
-              >
-                MES FAVORIS
-              </p>
-            </Link>
-          </li>
-          <li>
-            <Link href="/">
+            <Link href="/profile">
               <p
                 onClick={() => setIsOpen(!isOpen)}
                 className="text-2xl cursor-pointer font-black hover:text-pink tracking-wide md:text-5xl md:hover:text-6xl"
@@ -65,11 +59,25 @@ function Header({ color }) {
             </Link>
           </li>
           <li>
-            <Link href="/">
-              <p className="text-2xl cursor-pointer font-black hover:text-pink tracking-wide md:text-5xl md:hover:text-6xl">
-                SE DECONNECTER
-              </p>
-            </Link>
+            {currentUserProfile ? (
+              <Link href="/">
+                <p
+                  className="text-2xl cursor-pointer font-black hover:text-pink tracking-wide md:text-5xl md:hover:text-6xl"
+                  onClick={() => signOut()}
+                >
+                  SE DECONNECTER
+                </p>
+              </Link>
+            ) : (
+              <Link href="/">
+                <p
+                  className="text-2xl cursor-pointer font-black hover:text-pink tracking-wide md:text-5xl md:hover:text-6xl"
+                  onClick={() => signIn()}
+                >
+                  SE CONNECTER
+                </p>
+              </Link>
+            )}
           </li>
         </ul>
       </nav>
