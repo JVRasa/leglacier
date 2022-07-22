@@ -28,13 +28,10 @@ function Home() {
         </section>
         <section className="flex flex-col gap-2">
           {currentUserProfile ? (
-            <Link>
-              <button
-                type="button"
-                className="bg-dark-blue py-2 rounded-xl font-black md:w-[20%] md:m-auto hover:text-slate-100  md:hover:scale-125 ease-in-out duration-200"
-              >
+            <Link href="/parlours">
+              <a className="bg-dark-blue py-2 text-center rounded-xl font-black md:w-[20%] md:m-auto hover:text-slate-100  md:hover:scale-125 ease-in-out duration-200">
                 COMMENCER
-              </button>
+              </a>
             </Link>
           ) : (
             <button
