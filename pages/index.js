@@ -1,13 +1,11 @@
 import Header from "../components/Header";
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/router";
 import { CurrentUserContext } from "../context/currentUserContext";
 import { useContext } from "react";
+import Link from "next/link";
 
 function Home() {
   const color = "green";
-
-  const router = useRouter();
 
   const { currentUserProfile } = useContext(CurrentUserContext);
 
@@ -30,13 +28,14 @@ function Home() {
         </section>
         <section className="flex flex-col gap-2">
           {currentUserProfile ? (
-            <button
-              type="button"
-              className="bg-dark-blue py-2 rounded-xl font-black md:w-[20%] md:m-auto hover:text-slate-100  md:hover:scale-125 ease-in-out duration-200"
-              onClick={router.push("/parlours")}
-            >
-              COMMENCER
-            </button>
+            <Link>
+              <button
+                type="button"
+                className="bg-dark-blue py-2 rounded-xl font-black md:w-[20%] md:m-auto hover:text-slate-100  md:hover:scale-125 ease-in-out duration-200"
+              >
+                COMMENCER
+              </button>
+            </Link>
           ) : (
             <button
               type="button"
