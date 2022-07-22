@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 
 import { CurrentUserContext } from "../context/currentUserContext";
 
-function ReviewCard({ review, reviewId, parlorDetails }) {
+function ReviewCard({ review, reviewId }) {
   const router = useRouter();
 
   const { currentUserProfile } = useContext(CurrentUserContext);
@@ -34,7 +34,7 @@ function ReviewCard({ review, reviewId, parlorDetails }) {
         <p>{review.message}</p>
         <div className="flex gap-2 mt-6">
           {currentUserProfile &&
-            currentUserProfile.username === parlorDetails.user.username && (
+            currentUserProfile.username === review.user.username && (
               <>
                 <Link href={`/reviews/edit/${reviewId}`}>
                   <PencilAltIcon className="h-6 w-6 cursor-pointer" />

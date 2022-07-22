@@ -23,7 +23,13 @@ function ParlourDetail() {
         .catch((err) => {
           console.error(err.response.data);
         });
-  }, []);
+  }, [id]);
+
+  if (!parlorDetails) return null;
+
+  const reviewNameList = parlorDetails.reviews.map(
+    (review) => review.user.username
+  );
 
   const color = "yellow";
 
@@ -73,9 +79,8 @@ function ParlourDetail() {
           </h1>
           <section className="bg-[#ffffff] p-4 rounded-xl mb-4 flex flex-col">
             {currentUserProfile &&
-            currentUserProfile.username ===
-              parlorDetails.reviews[0].user.username ? (
-              <p>Vous avez déjà ajouter votre avis, merci 🍨</p>
+            reviewNameList.includes(currentUserProfile.username) ? (
+              <p>Vous avez déjà ajouté votre avis, merci 🍨</p>
             ) : (
               <>
                 <p>
@@ -95,7 +100,6 @@ function ParlourDetail() {
                 key={review.id}
                 review={review}
                 reviewId={review.id}
-                parlorDetails={parlorDetails.reviews[0]}
               />
             ))}
           </section>
